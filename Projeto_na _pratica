@@ -1,0 +1,18 @@
+#import pacotes
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+
+#definindo o estilo dos gráficos
+sns.set_style()
+
+#Carregando os dados 
+df = pd.read_csv('/content/criminalidade_sp_2.csv', parse_dates=['time'])
+
+#transformando a coluna time em datetime, e definindo como índice do dataframe 
+df.index =pd.to_datetime(df['time'],infer_datetime_format=true)
+
+#verificando as primeiras entradas 
+df.head()
+
